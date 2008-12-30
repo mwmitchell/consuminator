@@ -1,4 +1,14 @@
 =Conuminator
 ...is a Rails/Solr based app that indexes data into solr and then provides searching/browsing
 
-...more to come
+=Installation
+==Start Solr
+In a new shell window:
+  cd apache-solr/example
+  java -jar start.jar
+
+==Start Rails
+In another new shell window:
+  ./script/server
+
+Browse to http://localhost:3000/feeds. Try indexing an rss feed! Will probably break, but keep trying! :)
