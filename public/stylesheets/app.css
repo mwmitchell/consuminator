@@ -1,0 +1,112 @@
+html, body{
+color:#333;
+line-height:1.5em;
+}
+a{
+color:#951;
+}
+a:hover{
+color:#159;
+}
+a:visited{
+color:#888;
+}
+#wrap{
+width:950px;
+margin:0 auto;
+}
+#content{
+padding:1em;
+border:solid 1px gray;
+}
+#flash{
+color:#321;
+font-weight:bold;
+border:solid 1px lightgray;
+padding:.5em;
+background-color:lightyellow;
+}
+.errorList li{
+color:darkred;
+}
+.pagination{
+text-align:center;
+margin-bottom:1em;
+}
+.pagination a{
+color:black;
+}
+.pagination a:hover{
+  color:inherit;
+}
+div.action{
+margin:1em 0;
+}
+
+.feedItem{
+border-bottom:1px solid gray;
+min-height:180px;
+}
+.feedItem h5{
+margin-bottom:1em;
+}
+.feedItem img{
+max-width:100px;
+}
+
+.left{float:left;}
+
+.right{float:right;}
+
+.container{/* should probably just use YUI grids? */
+position:relative;
+}
+.container:after{
+content:'.';
+display:block;
+height:0;
+clear:both;
+visibility:hidden;
+}
+
+.leftImage{
+float:left;
+margin-right:1em;
+}
+
+.rightImage{
+float:right;
+margin-left:1em;
+}
+
+.photo{
+border:solid 1px #999;
+clear:both;
+}
+
+.centerText{
+text-align:center;
+}
+.leftText{
+text-align:left;
+}
+.rightText{
+text-align:right;
+}
+
+#search{
+width:250px;
+}
+#results{
+width:655px;
+}
+#searchAndResults{
+border-top:solid 1px gray;
+padding-top:1em;
+}
+
+#feeds{
+max-height:400px;
+overflow:auto;
+padding:1em;
+}

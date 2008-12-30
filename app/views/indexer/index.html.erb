@@ -1,0 +1,16 @@
+<h1>Indexer</h1>
+
+<div class="action"><%= link_to 'Back to Feeds', feeds_path %></div>
+
+<% unless @errors.empty? %>
+  <ul class="errorList">
+  <% @errors.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_tag indexer_index_path %>
+  <label>Feed URL: <%= text_field_tag :url, params[:url], :class=>:text %></label>
+  <%= submit_tag 'Index' %>
+</form>

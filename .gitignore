@@ -1,0 +1,4 @@
+apache-solr/example/solr/data/*
+log/*
+tmp/pids/*
+.DS_Store
