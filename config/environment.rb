@@ -73,7 +73,11 @@ Rails::Initializer.run do |config|
   # Please note that observers generated using script/generate observer need to have an _observer suffix
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
   
-  config.gem "mwmitchell-solr", :version=>'>=0.5.6'
   config.gem "hpricot", :version=>'>=0.6.164'
-  config.gem 'mislav-will_paginate', :version=>'>=2.3.6'
+  
+  # how the heck do you get github gems in config.gem ?!
+  
 end
+
+require 'solr' # 0.5.6 is required!
+require 'will_paginate' # 2.3.6 is required!
