@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   
   
   def solr
-    @solr ||= Solr.connect(:http)
+    @solr ||= RSolr.connect(:http)
   end
   
 end

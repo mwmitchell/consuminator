@@ -23,7 +23,7 @@ class IndexerController < ApplicationController
   
   # fetch the rss data
   def fetch_rss_feed(url)
-    hclient = Solr::HTTPClient.connect(url, :curb)
+    hclient = RSolr::HTTPClient.connect(url, :curb)
     begin
       hclient.get('')
     rescue
@@ -56,7 +56,7 @@ class IndexerController < ApplicationController
       :feed_language_facet => feed_lang
     }
     
-    mapper = Solr::Mapper::Base.new(mapping)
+    mapper = RSolr::Mapper::Base.new(mapping)
     mapped_data = mapper.map(items)
     
     return false if mapped_data.size==0

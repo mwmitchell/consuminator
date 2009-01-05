@@ -79,5 +79,5 @@ Rails::Initializer.run do |config|
   
 end
 
-require 'solr' # 0.5.6 is required!
+require 'rsolr' # 0.5.8 is required!
 require 'will_paginate' # 2.3.6 is required!
