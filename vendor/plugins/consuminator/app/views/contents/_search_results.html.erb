@@ -1,0 +1,5 @@
+<% @response.docs.each do |doc| %>
+  <div class="contentItem">
+    <%= render(:partial=>"contents/_object_types/#{doc[:object_type_facet]}.html.erb", :locals=>{:doc=>doc}) %>
+  </div>
+<% end %>

@@ -1,7 +1,25 @@
 =Conuminator
-...is a Rails/Solr based app that indexes data into solr and then provides searching/browsing
+...is a Rails/Solr based app that indexes data into solr and provides searching/browsing/facetting capabilities using the RSolr library: http://github.com/mwmitchell/rsolr/tree/master
 
 =Installation
+
+Create a new Rails application (if you don't have an app created):
+  rails ./mycon
+  cd mycon
+  
+  ruby script/plugin install git://github.com/lazyatom/engines.git
+  ruby script/plugin install git://github.com/mwmitchell/consuminator.git/vendor/plugins/consuminator
+
+Install the dependencies:
+  gem sources -a http://gems.github.com
+  sudo gem install mwmitchell-rsolr
+  sudo gem install will_paginate
+
+Now add the following to your config/routes.rb file:
+  map.from_plugin :consuminator
+
+=Running
+
 ==Start Solr
 In a new shell window:
   cd apache-solr/example
@@ -12,3 +30,7 @@ In different shell window:
   ./script/server
 
 Browse to http://localhost:3000/. Try indexing an rss feed!
+
+=Customizing
+You can override any of the files that Consuminator uses in:
+  vendor/plugins/consuminator/app/*

@@ -10,6 +10,8 @@ RAILS_GEM_VERSION = '2.2.2' unless defined? RAILS_GEM_VERSION
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
+require File.join(File.dirname(__FILE__), '../vendor/plugins/engines/boot')
+
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
@@ -75,8 +77,8 @@ Rails::Initializer.run do |config|
   
 end
 
-#require '/Users/mwm4n/Desktop/rsolr/lib/rsolr' # 0.5.8 is required!
-require 'rsolr' # 0.5.9 is required! -> http://github.com/mwmitchell/rsolr/tree/master
+require '/Users/mwm4n/Desktop/rsolr/lib/rsolr' # 0.5.8 is required!
+#require 'rsolr' # 0.5.9 is required! -> http://github.com/mwmitchell/rsolr/tree/master
 
 require 'will_paginate' # 2.3.6 is required!
 
