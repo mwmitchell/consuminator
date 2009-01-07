@@ -1,0 +1,27 @@
+<h2>Content</h2>
+
+<div class="action"><%= link_to 'Consume New Data', indexer_index_path %></div>
+
+<div class="container" id="searchAndResults">
+  
+  <div class="left" id="search">
+    
+    <%= render :partial=>'search_form' %>
+    
+    <%= render :partial=>'facets' %>
+    
+  </div>
+  
+  <div class="left" id="results">
+    
+    <%= will_paginate(@response) %>
+    
+    <%= @response.total %> Total Items
+    
+    <div id="contentItems">
+      <%= render :partial=>'search_results' %>
+    </div>
+    
+  </div>
+  
+</div>

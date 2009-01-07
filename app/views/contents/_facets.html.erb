@@ -1,0 +1,34 @@
+<div id="facets">
+
+  <% solr.index_info.field_list(/_facet/).each do |facet_field| %>
+
+  <% facet_values = @response.facet_field_values(facet_field) %>
+
+  <% next if facet_values.size==0 %>
+
+  <div>
+  
+    <strong><%= facet_field.humanize.gsub(/ facet$/, '') %></strong>
+  
+    <ul>
+    
+      <% facet_values.each do |facet_value| %>
+        <% hits = @response.facet_field_count(facet_field, facet_value) %>
+        <% if facet_in_params? facet_field, facet_value %>
+          <li>
+            <%= facet_value %> (<%= hits %>)
+            <%= link_to 'remove', remove_facet_params(facet_field, facet_value) %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to facet_value, add_facet_params(facet_field, facet_value) %> (<%= hits %>)
+          </li>
+        <% end %>
+      <% end %>
+    
+    </ul>
+  </div>
+
+  <% end %>
+
+</div>

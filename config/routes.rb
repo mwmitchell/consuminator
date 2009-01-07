@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   
-  map.resources :feeds
+  map.resources :contents
   map.resources :indexer
   
   # The priority is based upon order of creation: first created -> highest priority.

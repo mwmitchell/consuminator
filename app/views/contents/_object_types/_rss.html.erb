@@ -1,0 +1,10 @@
+<h5>
+  <%= link_to doc[:title_facet], doc[:url_s] %> / <%= link_to doc[:item_title_t], doc[:item_link_t], :target=>:_blank %>
+</h5>
+
+<% if doc.has?(:image_url_t) %>
+  <%= image_tag doc[:image_url_t], :class=>:rightImage %>
+  <br class="clear" />
+<% end %>
+
+<p class="description"><%= doc[:item_description_t] %></p>

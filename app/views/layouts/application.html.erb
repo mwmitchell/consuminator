@@ -2,24 +2,24 @@
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  
   <head>
   	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  	<title>Solr Example</title>
+  	<title>Consuminator. I will eat you!</title>
   	<%= stylesheet_link_tag 'yui' %>
   	<%= stylesheet_link_tag 'app' %>
   </head>
   
   <body>
-  
     <div id="wrap">
       <div id="content">
+        <h1 id="appTitle">CoNsUmInAtOr</h1>
         <% if flash[:notice] %>
           <div id="flash"><%= flash[:notice] %></div>
         <% end %>
-
         <%= yield %>
       </div>
     </div>
-    
   </body>
+  
 </html>

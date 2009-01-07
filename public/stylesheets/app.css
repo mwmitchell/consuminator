@@ -1,7 +1,10 @@
 html, body{
 color:#333;
 line-height:1.5em;
+background-color:#3B0C02;
+font-family:arial;
 }
+
 a{
 color:#951;
 }
@@ -12,6 +15,7 @@ a:visited{
 color:#888;
 }
 #wrap{
+background-color:#FFFFFF;
 width:950px;
 margin:0 auto;
 }
@@ -26,8 +30,13 @@ border:solid 1px lightgray;
 padding:.5em;
 background-color:lightyellow;
 }
+.errorList{
+	background-color:lightyellow;
+	padding:.5em;
+}
 .errorList li{
 color:darkred;
+list-style:none;
 }
 .pagination{
 text-align:center;
@@ -43,14 +52,15 @@ div.action{
 margin:1em 0;
 }
 
-.feedItem{
-border-bottom:1px solid gray;
-min-height:180px;
+.contentItem{
+border:1px solid gray;
+padding:.5em;
+border-bottom:none;
 }
-.feedItem h5{
+.contentItem h5{
 margin-bottom:1em;
 }
-.feedItem img{
+.contentItem img{
 max-width:100px;
 }
 
@@ -105,8 +115,52 @@ border-top:solid 1px gray;
 padding-top:1em;
 }
 
-#feeds{
-max-height:400px;
-overflow:auto;
-padding:1em;
+form div.element{
+	margin:1em 0;
+}
+	form div.element label{
+		width: 4em;
+		float: left;
+		text-align: right;
+		width: 130px;
+		margin-right: 0.5em;
+		display: block;
+	}
+	form div.element input, form div.element textarea{
+		margin-left: 1.5em;
+	}
+
+form fieldset legend {
+  font-size: 150%;
+  font-weight: normal;
+  border-bottom:solid 1px gray;
+}
+
+.clear{clear:both;}
+
+#facets li{
+	font-weight:bold;
+	color:#888;
+}
+
+#facets a{
+	font-weight:normal;
+	text-decoration:none;
+	letter-spacing:.1em;
+	color:#159;
+}
+	#facets a:hover{
+		text-decoration:none;
+		letter-spacing:.1em;
+		color:#AA9;
+	}
+
+h1#appTitle{
+	color:#951;
+	letter-spacing:71px;
+}
+
+h2{
+	color:#888;
+	text-transform: uppercase;
 }
