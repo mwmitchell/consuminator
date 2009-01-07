@@ -58,7 +58,7 @@ Rails::Initializer.run do |config|
     :session_key => '_consuminator_session',
     :secret      => 'e8147ad7776ac5c5ac241e800f5adcf4caf7d4de45f874b6bdc2d473174b1a90c0f8775a2eb7967353faa8957a75fa6db7aa90eea8d5b832f6dc31b361ecaad1'
   }
-
+  
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information
   # (create the session table with "rake db:sessions:create")
@@ -76,7 +76,7 @@ Rails::Initializer.run do |config|
 end
 
 #require '/Users/mwm4n/Desktop/rsolr/lib/rsolr' # 0.5.8 is required!
-require 'rsolr' # 0.5.8 is required! -> http://github.com/mwmitchell/rsolr/tree/master
+require 'rsolr' # 0.5.9 is required! -> http://github.com/mwmitchell/rsolr/tree/master
 
 require 'will_paginate' # 2.3.6 is required!
 

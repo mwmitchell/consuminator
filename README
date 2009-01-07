@@ -11,4 +11,4 @@ In a new shell window:
 In different shell window:
   ./script/server
 
-Browse to http://localhost:3000/feeds. Try indexing an rss feed! Will probably break, but keep trying! :)
+Browse to http://localhost:3000/. Try indexing an rss feed!
