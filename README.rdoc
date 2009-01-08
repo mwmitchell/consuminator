@@ -3,6 +3,8 @@
 
 ==Installation
 
+You're gonna need Rails 2.2.2 for this!
+
 ===Install the dependencies:
   gem sources -a http://gems.github.com
   sudo gem install mwmitchell-rsolr
@@ -21,6 +23,10 @@ Extract and move to the desired location.
 ==Install the plugins:
   ruby script/plugin install git://github.com/lazyatom/engines.git
   ruby script/plugin install git://github.com/mwmitchell/consuminator.git
+
+... yes, it'll probably spit out:
+  Plugin not found: ["git://github.com/mwmitchell/consuminator.git"]
+Just ignore it! The plugin did get installed, look in vendor/plugins
 
 Add the following to your config/routes.rb file:
   map.from_plugin :consuminator
