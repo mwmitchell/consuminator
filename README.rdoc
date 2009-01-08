@@ -16,7 +16,7 @@ http://www.bizdirusa.com/mirrors/apache/lucene/solr/
 
 Extract and move to the desired location.
 
-==Create a new Rails application:
+==Create a new Rails Application:
   rails ./demo
   cd demo
 
