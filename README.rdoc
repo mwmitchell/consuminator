@@ -11,7 +11,8 @@
 ===Create a new Rails application:
   rails ./demo
   cd demo
-  
+
+==Install the plugins:
   ruby script/plugin install git://github.com/lazyatom/engines.git
   ruby script/plugin install git://github.com/mwmitchell/consuminator.git
 
