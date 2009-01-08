@@ -5,7 +5,7 @@
 
 You're gonna need Rails 2.2.2 for this!
 
-===Install the dependencies:
+===Install the Gem dependencies:
   gem sources -a http://gems.github.com
   sudo gem install mwmitchell-rsolr
   sudo gem install will_paginate
