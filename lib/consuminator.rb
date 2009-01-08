@@ -8,6 +8,10 @@ module Consuminator
   #
   module Helpers
     
+    def self.included(base)
+      base.helper_method :solr, :solr_facet_fields, :add_facet_params, :remove_facet_params, :facet_in_params?, :object_type_indexer_partials
+    end
+    
     def solr
       @solr ||= RSolr.connect(:http)
     end

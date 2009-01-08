@@ -20,6 +20,9 @@ Extract and move to the desired location.
   rails ./demo
   cd demo
 
+Now either remove the app/controllers/application.rb file or add this within the class declaration:
+  include Consuminator::Helpers
+
 ==Install the plugins:
   ruby script/plugin install git://github.com/lazyatom/engines.git
   ruby script/plugin install git://github.com/mwmitchell/consuminator.git
