@@ -9,7 +9,7 @@ module Consuminator
   module Helpers
     
     def solr
-      RSOLR_CONNECTION
+      @solr ||= RSolr.connect(:http)
     end
     
     def solr_facet_fields
