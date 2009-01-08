@@ -9,7 +9,8 @@ class IndexerController < ApplicationController
   
   # accept a POST request and begins indexing
   def create
-    params[:object_type].to_sym == :rss ? index_rss : raise("Unknown :object_type => #{params[:object_type]}")
+    index_method = "index_#{params[:object_type]}".to_sym
+    respond_to?(index_method) ? self.send(index_method) : raise("Unknown :object_type => #{params[:object_type]}")
   end
   
   protected

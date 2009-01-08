@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   
   include Consuminator::Helpers
   
-  helper_method :solr, :solr_facet_fields, :add_facet_params, :remove_facet_params, :facet_in_params?
+  helper_method :solr, :solr_facet_fields, :add_facet_params, :remove_facet_params, :facet_in_params?, :object_type_indexer_partials
   
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store

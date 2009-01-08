@@ -77,9 +77,9 @@ Rails::Initializer.run do |config|
   
 end
 
-#require '/Users/mwm4n/Desktop/rsolr/lib/rsolr' # 0.5.8 is required!
-require 'rsolr' # 0.5.8 is required! -> http://github.com/mwmitchell/rsolr/tree/master
+#require '/Users/mwm4n/Desktop/rsolr/lib/rsolr'
+#require 'rsolr' # 0.5.9 is required! -> http://github.com/mwmitchell/rsolr/tree/master
 
-require 'will_paginate' # 2.3.6 is required!
+#require 'will_paginate' # 2.3.6 is required!
 
 RSOLR_CONNECTION = RSolr.connect(:http)

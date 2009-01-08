@@ -22,8 +22,7 @@ Now add the following to your config/routes.rb file:
 
 ==Start Solr
 In a new shell window:
-  cd apache-solr/example
-  java -jar start.jar
+  rake solr:start
 
 ==Start Rails
 In different shell window:

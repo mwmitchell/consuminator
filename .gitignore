@@ -1,5 +1,5 @@
-apache-solr/example/solr/data/*
-apache-solr/example/logs/*
+vendor/plugins/consuminator/apache-solr/example/solr/data/*
+vendor/plugins/consuminator/apache-solr/example/logs/*
 log/*
 tmp/pids/*
 .DS_Store

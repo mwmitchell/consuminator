@@ -1,14 +1,19 @@
 Consuminator
 ============
 
-You must add the line map.from_plugin :consuminator to config/routes.rb on the host application.
+Add this:
 
-You must run script/generate plugin_migration && rake db:migrate to install (actually, not yet)
+	require File.join(File.dirname(__FILE__), '../vendor/plugins/engines/boot')
 
-Example
-=======
+at the top of your config/environment.rb, right after this line: "require File.join(File.dirname(__FILE__), 'boot')"
 
-Example goes here.
-
+You must add this to config/routes.rb within your application:
+	
+	ActionController::Routing::Routes.draw do |map|
+		
+		# THIS LINE:
+		map.from_plugin :consuminator
+		
+	end
 
 Copyright (c) 2009 [Matt Mitchell], released under the MIT license

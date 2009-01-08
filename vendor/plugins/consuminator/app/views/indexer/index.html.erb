@@ -4,12 +4,6 @@
 
 <%= render :partial=>'errors' %>
 
-<%= form_tag indexer_index_path %>
-  <fieldset>
-    <legend>RSS Feed</legend>
-    <div class="element"><label>Feed URL:</label> <%= text_field_tag :rss_feed_url, params[:rss_feed_url], :class=>:text %></div>
-    <div class="element"><label>Tags:</label> <%= text_field_tag :tags, params[:tags], :class=>:text %></div>
-    <%= hidden_field_tag :object_type, :rss %>
-    <div class="element"><label>&nbsp;</label><%= submit_tag 'GO!' %></div>
-  </fieldset>
-</form>
+<% object_type_indexer_partials.each do |tpl| %>
+  <%= render :file=>'indexer/_object_types/_rss.html.erb' %>
+<% end %>
