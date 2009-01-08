@@ -1,6 +1,8 @@
 namespace :solr do
-  desc 'Start Solr'
-  task :start do
-    `cd #{File.dirname(__FILE__)}/../../apache-solr/example && java -jar start.jar`
+  desc 'Copies the default solr schema and config to the given directory'
+  task :copy_configs do
+    Dir[File.join(File.dirname(__FILE__), 'solr-configs', '*.xml'].each do |f|
+      
+    end
   end
 end
