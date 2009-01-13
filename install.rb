@@ -1,2 +1,2 @@
 # Install hook code here
-puts File.read(File.join(RAILS_ROOT, 'vendor', 'plugins', 'consuminator' 'README'))
+puts File.read(File.join(File.dirname(__FILE__), 'README'))
