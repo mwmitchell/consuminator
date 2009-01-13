@@ -1,22 +1,27 @@
-require 'hpricot'
-
 class ContentsController < ApplicationController
   
   # display/search the docs
   def index
-    query_params = {
+    search_opts = {
       :q=>params[:q],
       :qt=>:dismax,
       :qf=>'text',
-      :filters=>{:object_type_facet=>:rss},
       :page=>params[:page],
       :per_page=>5
     }
-    query_params[:facets] = [{:field=>solr_facet_fields}]
+    
+    search_opts[:facet] = true
+    search_opts[:facet.field] = self.solr_facet_fields
+    
     if params[:f] and params[:f].is_a?(Hash)
-      query_params[:phrase_filters] = params[:f]
+      search_opts[:fq]=[]
+      params[:f].each_pair do |field,values|
+        values.each do |v|
+          search_opts[:fq] << "#{field}:" + '"' + %Q(#{v}) + '"'
+        end
+      end
     end
-    @response = solr.search(query_params)
+    @response = solr.search(search_opts)
   end
   
 end

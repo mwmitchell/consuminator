@@ -1,15 +1,15 @@
 <div id="facets">
-
+  
   <% solr.index_info.field_list(/_facet/).each do |facet_field| %>
-
+  
   <% facet_values = @response.facet_field_values(facet_field) %>
-
-  <% next if facet_values.size==0 %>
-
+  
+  <% next if ! facet_values || facet_values.size==0 %>
+  
   <div>
-  
+    
     <strong><%= facet_field.humanize.gsub(/ facet$/, '') %></strong>
-  
+    
     <ul>
     
       <% facet_values.each do |facet_value| %>
