@@ -20,7 +20,7 @@ class IndexerController < ApplicationController
     
     begin
       total_indexed = rss_indexer.go!(:tags_facet=>params[:tags].to_s.split(','))
-    rescue MappingError
+    rescue Consuminator::MappingError
       @error << "Mapping Error: #{$!}"
     end
     

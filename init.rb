@@ -1,11 +1,2 @@
-# Include hook code here
-
-require 'rsolr' # required 0.6.1
-require 'will_paginate'
-
-#config.gem 'rsolr', :version=>'0.6.1'
-#config.gem 'will_paginate'
-
-#config.after_initialize do
-#  
-#end
+config.gem 'mwmitchell-rsolr', :version=>'0.6.2', :lib => 'rsolr', :source => 'http://gems.github.com'
+config.gem 'will_paginate', :version=>'2.2.2'
