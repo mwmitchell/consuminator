@@ -71,15 +71,9 @@ module Consuminator
       return unless (rss = fetch_rss_feed)
       rss = RSS::Parser.parse(rss[:body], false)
       begin
-        mapping = map_rss(rss)
+        mapped_data = map_rss(rss)
       rescue
         raise MappingError.new($!)
-      end
-      mapper = RSolr::Mapper::Base.new(mapping)
-      mapped_data = mapper.map(rss.items)
-      return if mapped_data.size==0
-      if extra_fields
-        mapped_data.each {|item| item.merge!(extra_fields) }
       end
       @solr.add(mapped_data) and @solr.commit
       mapped_data.size
@@ -87,25 +81,29 @@ module Consuminator
     
     protected
     
-    # creates a hash suitable for being use with RSolr::Mapper
+    # creates an array of hashes suitable for being use with RSolr::Mapper
     def map_rss(rss)
-      {
-        :object_type_facet=>'rss',
-        :language_facet => rss.channel.language,
-        :title_facet=>rss.channel.title,
+      index=0
+      rss.items.collect do |item|
+        {
+          :object_type_facet=>'rss',
+          :language_facet => rss.channel.language,
+          :title_facet=>rss.channel.title,
         
-        :image_url_t => (rss.channel.image.url rescue rss.channel.image rescue nil),
-        :published_t => rss.channel.date,
+          :image_url_t => (rss.channel.image.url rescue rss.channel.image rescue nil),
+          :published_t => rss.channel.date,
         
-        :url_s=>rss.channel.link,
+          :url_s=>rss.channel.link,
         
-        :total_i=>rss.items.size,
+          :total_i=>rss.items.size,
         
-        :id => proc {|item,index| rss.channel.title + ' - ' + index.to_s },
-        :item_title_t => proc {|item,index| item.title },
-        :item_link_t => proc{|item,index| item.link },
-        :item_description_t => proc{|item,index| item.description }
-      }
+          :id => rss.channel.title + ' - ' + index.to_s,
+          :item_title_t => item.title,
+          :item_link_t => item.link,
+          :item_description_t => item.description
+        }
+        index += 1
+      end
     end
     
     # fetch the rss data
