@@ -3,7 +3,7 @@
 
 ==Installation
 
-You're gonna need Rails 2.2.2, RSolr 0.6.1 and will_paginate.
+You're gonna need Rails 2.2.2, RSolr 0.6.2 and will_paginate 2.2.2
 
 ===Install the Gem dependencies:
   gem sources -a http://gems.github.com

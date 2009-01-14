@@ -156,11 +156,25 @@ form fieldset legend {
 	}
 
 h1#appTitle{
-	color:#951;
-	letter-spacing:71px;
+	
 }
+	#appTitle a{
+		color:darkred;
+	}
+	#appTitle a:visited{
+		color:darkred;
+	}
+	#appTitle a:hover{
+		color:red;
+	}
 
 h2{
-	color:#888;
+	color:white;
 	text-transform: uppercase;
+	background-color:lightblue;
+	display:inline;
+}
+
+#searchAndResults form{
+	margin-bottom:1em;
 }
