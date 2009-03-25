@@ -1,4 +1,4 @@
-class ContentsController < ApplicationController
+class DocsController < ApplicationController
   
   # display/search the docs
   def index

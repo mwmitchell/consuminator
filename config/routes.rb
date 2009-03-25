@@ -1,8 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   
-  map.root :controller=>'contents', :action=>'index'
+  map.root :controller=>'docs', :action=>'index'
   
-  map.resources :contents
+  map.resources :docs
   map.resources :indexer
   
   # The priority is based upon order of creation: first created -> highest priority.
