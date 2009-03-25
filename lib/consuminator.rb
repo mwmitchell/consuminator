@@ -3,6 +3,22 @@ require 'rss/2.0'
 
 module Consuminator
   
+  class << self
+    
+    attr_accessor :solr, :config
+    
+    def configure(&blk)
+      yield @config
+    end
+    
+    def init
+      
+    end
+    
+  end
+  
+  @config ||= {}
+  
   #
   #
   #
@@ -18,7 +34,7 @@ module Consuminator
     
     def solr_facet_fields
       @solr_facet_fields ||= (
-        solr.index_info.field_list(/_facet/)
+        solr.send_request('/admin/luke', :numTerms=>0)[:fields].map{|i|i.first}.grep(/_facet$/)
       )
     end
     

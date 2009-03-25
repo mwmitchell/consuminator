@@ -4,23 +4,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   
   <head>
+    
   	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   	
-  	<title>CoNsUmInAtOr -- a Rails Engines + RSolr demo</title>
+  	<title>Consuminator</title>
   	
-  	<%= stylesheet_link_tag 'yui', :plugin=>'consuminator' %>
-  	<%= stylesheet_link_tag 'app', :plugin=>'consuminator' %>
+  	<%= stylesheet_link_tag 'consuminator/yui' %>
+  	<%= stylesheet_link_tag 'consuminator/app' %>
   	
   </head>
   
   <body>
     <div id="wrap">
       <div id="content">
-        <h1 id="appTitle">
-        <%= link_to('CoNsUmInAtOr', 'http://github.com/mwmitchell/consuminator', :target=>:_blank) %>
-    	   -- a  <%= link_to('Rais Engines', 'http://rails-engines.org', :target=>:_blank) %> + 
-    	  <%= link_to('RSolr', 'http://github.com/mwmitchell/rsolr', :target=>:_blank) %> demo
-        </h1>
         <% if flash[:notice] %>
           <div id="flash"><%= flash[:notice] %></div>
         <% end %>

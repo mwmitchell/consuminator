@@ -1,34 +1,31 @@
 <div id="facets">
   
-  <% solr.index_info.field_list(/_facet/).each do |facet_field| %>
+  <% @response.facets.each do |facet| %>
   
-  <% facet_values = @response.facet_field_values(facet_field) %>
-  
-  <% next if ! facet_values || facet_values.size==0 %>
+  <% next if facet.items.size < 1 %>
   
   <div>
     
-    <strong><%= facet_field.humanize.gsub(/ facet$/, '') %></strong>
+    <strong><%= facet.name.humanize.gsub(/ facet$/, '') %></strong>
     
     <ul>
     
-      <% facet_values.each do |facet_value| %>
-        <% hits = @response.facet_field_count(facet_field, facet_value) %>
-        <% if facet_in_params? facet_field, facet_value %>
+      <% facet.items.each do |item| %>
+        <% if facet_in_params? facet.name, item.value %>
           <li>
-            <%= facet_value %> (<%= hits %>)
-            <%= link_to 'remove', remove_facet_params(facet_field, facet_value) %>
+            <%= item.value %> (<%= item.hits %>)
+            <%= link_to 'remove', remove_facet_params(facet.name, item.value) %>
           </li>
         <% else %>
           <li>
-            <%= link_to facet_value, add_facet_params(facet_field, facet_value) %> (<%= hits %>)
+            <%= link_to item.value, add_facet_params(facet.name, item.value) %> (<%= item.hits %>)
           </li>
         <% end %>
       <% end %>
     
     </ul>
   </div>
-
+  
   <% end %>
 
 </div>

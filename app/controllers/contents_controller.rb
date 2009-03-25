@@ -11,7 +11,10 @@ class ContentsController < ApplicationController
     }
     
     search_opts[:facet] = true
-    search_opts[:facet.field] = self.solr_facet_fields
+    search_opts['facet.field'] = self.solr_facet_fields
+    search_opts['facet.limit'] = 10
+    search_opts['facet.mincount'] = 1
+    search_opts['facet.sort'] = true
     
     if params[:f] and params[:f].is_a?(Hash)
       search_opts[:fq]=[]
@@ -21,7 +24,9 @@ class ContentsController < ApplicationController
         end
       end
     end
-    @response = solr.search(search_opts)
+    
+    raw_response = solr.select( RSolr::Ext::Request::Standard.new.map(search_opts) )
+    @response = RSolr::Ext::Response::Standard.new(raw_response)
   end
   
 end

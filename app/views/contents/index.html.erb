@@ -14,9 +14,9 @@
   
   <div class="left" id="results">
     
-    <%= will_paginate(@response) %>
+    <%= will_paginate(@response.docs) %>
     
-    <%= @response.total %> Total Items
+    <%= @response.params[:numFound] %> Total Items
     
     <div id="contentItems">
       <%= render :partial=>'search_results' %>

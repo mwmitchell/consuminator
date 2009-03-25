@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   
   map.root :controller=>'contents', :action=>'index'
+  
   map.resources :contents
   map.resources :indexer
   
