@@ -1,9 +1,0 @@
-<h2>Consume</h2>
-
-<div class="action"><%= link_to 'Back to Indexed Content', docs_path %></div>
-
-<%= render :partial=>'errors' %>
-
-<% object_type_indexer_partials.each do |tpl| %>
-  <%= render :file=>'indexer/_object_types/_rss.html.erb' %>
-<% end %>

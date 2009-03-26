@@ -440,12 +440,17 @@
        of "dismax". 
        see http://wiki.apache.org/solr/DisMaxRequestHandler
    -->
-  <requestHandler name="dismax" class="solr.SearchHandler" >
+  <requestHandler name="documents" class="solr.SearchHandler" >
     <lst name="defaults">
-     <str name="defType">dismax</str>
-     <str name="echoParams">explicit</str>
-     <float name="tie">0.01</float>
-     <str name="q.alt">*:*</str>
+		<str name="defType">dismax</str>
+		<str name="echoParams">explicit</str>
+		<float name="tie">0.01</float>
+		<str name="q.alt">*:*</str>
+		<str name="facet.limit">10</str>
+		<str name="facet.mincount">1</str>
+		<str name="facet.sort">true</str>
+		<str name="facet">true</str>
+		<str name="qf">text</str>
     </lst>
   </requestHandler>
 
