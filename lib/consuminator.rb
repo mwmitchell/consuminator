@@ -12,10 +12,6 @@ module Consuminator
       @solr ||= RSolr::Ext.connect
     end
     
-    def init config
-      ApplicationController.send(:include, Consuminator::Helpers)
-    end
-    
   end
   
   @config ||= {}

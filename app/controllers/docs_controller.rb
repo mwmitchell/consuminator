@@ -22,8 +22,7 @@ class DocsController < ApplicationController
     #  end
     #end
     
-    raw_response = solr.select( RSolr::Ext::Request::Standard.new.map(search_opts) )
-    @response = RSolr::Ext::Response::Standard.new(raw_response)
+    @response = solr.find search_opts
   end
   
 end
