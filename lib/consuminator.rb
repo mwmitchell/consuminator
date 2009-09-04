@@ -9,11 +9,11 @@ module Consuminator
     end
     
     def solr
-      @solr ||= RSolr.connect
+      @solr ||= RSolr::Ext.connect
     end
     
-    def init
-      
+    def init config
+      ApplicationController.send(:include, Consuminator::Helpers)
     end
     
   end
@@ -25,10 +25,7 @@ module Consuminator
   #
   module Helpers
     
-    FACET_FIELDS = Consuminator.solr.send_request(
-      '/admin/luke',
-      :numTerms=>0
-    )[:fields].map{|i|i.first}.grep(/_facet$/)
+    FACET_FIELDS = Consuminator.solr.luke[:fields].map{|i|i.first}.grep(/_facet$/)
     
     def self.included(base)
       base.helper_method :solr, :solr_facet_fields, :add_facet_params, :remove_facet_params, :facet_in_params?, :object_type_indexer_partials

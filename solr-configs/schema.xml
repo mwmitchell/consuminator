@@ -336,7 +336,7 @@
    <dynamicField name="*_dt" type="date"    indexed="true"  stored="true"/>
    
    <dynamicField name="*_facet" type="string" indexed="true" stored="true" multiValued="true" />
-   <dynamicField name="*_display" type="string" indexed="false" stored="true" />
+   <!--><dynamicField name="*_display" type="string" indexed="false" stored="true" />-->
    
    <!-- uncomment the following to ignore any fields that don't already match an existing 
         field name or dynamic field, rather than reporting them as an error. 
@@ -348,6 +348,8 @@
  
  <!-- copy the facet values to the more search friendly field, "text" -->
  <copyField source="*_facet" dest="text"/>
+ <copyField source="*_t" dest="text"/>
+ <copyField source="*_s" dest="text"/>
  
  <!-- Field to use to determine and enforce document uniqueness. 
       Unless this field is marked with required="false", it will be a required field
