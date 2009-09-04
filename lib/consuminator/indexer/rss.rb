@@ -1,5 +1,7 @@
+require 'rss'
 require 'rss/1.0'
 require 'rss/2.0'
+require 'open-uri'
 
 class Consuminator::Indexer::RSS
   
@@ -13,7 +15,7 @@ class Consuminator::Indexer::RSS
   # index into solr
   def go!(extra_fields=nil)
     return unless (rss = fetch_rss_feed)
-    rss = RSS::Parser.parse(rss[:body], false)
+    #rss = RSS::Parser.parse(rss[:body], false)
     begin
       mapped_data = map_rss(rss, extra_fields)
     rescue
@@ -49,13 +51,7 @@ class Consuminator::Indexer::RSS
   
   # fetch the rss data
   def fetch_rss_feed
-    begin
-      hclient = RSolr::HTTPClient::Connector.new(:curb).connect(@rss_url)
-      hclient.get('')
-    rescue
-      puts $!
-      false
-    end
+    RSS::Parser.parse( @rss_url )
   end
   
 end

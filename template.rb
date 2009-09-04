@@ -16,6 +16,8 @@ end
 
 modify_env_for_engines_boot!
 
+run 'rm public/index.html'
+
 begin
   if ask("Would you like to download and configure Apache Solr now? (yes/no)") =~ /y/i
     require 'open-uri'
