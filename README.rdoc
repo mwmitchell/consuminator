@@ -7,7 +7,7 @@
 You can either follow the boring instructions below, or install via a magical Rails template:
   rails my-new-app -m http://github.com/mwmitchell/consuminator/raw/master/template.rb
 
-==Manual Boring Installation
+==Manual +Boring+ Installation
 You're gonna need Rails 2.3.3, RSolr & RSolr::Ext 0.9.5 and will_paginate 2.3.8
 
 ===Install the Gem dependencies:
